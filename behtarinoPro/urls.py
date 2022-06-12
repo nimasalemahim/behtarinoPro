@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from user.views import GetUsersForAdminView, CreatAddressView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/get_users_admin/', GetUsersForAdminView.as_view(), name='getUsersAdmin'),
+    path('api/create_address/', CreatAddressView.as_view(), name='createAddress')
 ]

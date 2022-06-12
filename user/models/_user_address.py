@@ -17,5 +17,7 @@ class UserAddress(ModificationMixin):
     def get_admin_created_users():
         return UserAddress.objects.filter(admin_created=True)
 
+    def send_notif(self):
+        print(f'notif for address {self.id}')
 
-# Create your models here.
+

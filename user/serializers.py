@@ -6,7 +6,7 @@ class GeneralUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = (
-            'first_name', 'last_name'
+            'id', 'first_name', 'last_name'
         )
 
 
@@ -14,7 +14,15 @@ class UserAddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserAddress
         fields = (
-            'title', 'lat', 'long'
+            'id', 'title', 'lat', 'long'
+        )
+
+
+class UserAddressCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserAddress
+        fields = (
+            'user', 'title', 'lat', 'long'
         )
 
 
@@ -27,5 +35,3 @@ class AdminUserSerializer(serializers.ModelSerializer):
         fields = (
             'first_name', 'last_name', 'count_addresses', 'addresses'
         )
-
-
