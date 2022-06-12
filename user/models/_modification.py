@@ -3,7 +3,6 @@ import datetime
 
 
 class ModificationMixin(models.Model):
-    uid = models.CharField(max_length=100, unique=True, null=True)
     _created_at = models.DateTimeField(auto_now_add=True, null=True)
     _updated_at = models.DateTimeField(auto_now=True, null=True)
 
